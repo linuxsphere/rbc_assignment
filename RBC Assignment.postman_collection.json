@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "4fa29a66-0ee8-4687-b05e-24d6cf583f04",
+		"name": "RBC Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15831856"
+	},
+	"item": [
+		{
+			"name": "Post new DataEntry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"quarter\":1,\"stock\":\"MyTicker\",\"date\":\"1/7/2011\",\"open\":101.1,\"high\":1001.33,\"low\":99.1,\"close\":999.33,\"volume\":239655616,\"percent_change_price\":\"3.332232\",\"percent_change_volume_over_last_wk\":\"\",\"previous_weeks_volume\":\"\",\"next_weeks_open\":12232.33,\"next_weeks_close\":12123.33,\"percent_change_next_weeks_price\":33.3233,\"days_to_next_dividend\":26,\"percent_return_next_dividend\":33.133}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dowjones/v1/stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dowjones",
+						"v1",
+						"stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get DataEntryList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dowjones/v1/stock/MyTicker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dowjones",
+						"v1",
+						"stock",
+						"MyTicker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload data file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/xingl/dev/rbc_assignment/src/test/resources/dow_jones_index.data"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/dowjones/v1/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dowjones",
+						"v1",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
