@@ -3,7 +3,8 @@
     mvn clean install
 
 >  Uploaded data file will be saved into "C:\dowJones\files".  In order to run the Restful service without problem   
-    you need to create folder "c:\downJones\files"
+    you need to create folder "c:\downJones\files".
+    
     This is not required for building the application. 
 
 >   Postman test collection file:
