@@ -31,12 +31,16 @@ public class FileProcessor implements Callable {
 
     @Override
     public Integer call() throws Exception {
+        File file = null;
+        FileReader fileReader = null;
+        BufferedReader reader = null;
+        int count = 0;
         try {
             if (!uploadedFile.isFile() || !uploadedFile.exists())
                 return -1;
-            File file = uploadedFile.getFile();
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            int count = 0;
+            file = uploadedFile.getFile();
+            fileReader = new FileReader(file);
+            reader = new BufferedReader(fileReader);
             List<DataEntry> dataEntryList = new ArrayList<>();
             String line;
             while ((line = reader.readLine()) != null) {
@@ -72,11 +76,14 @@ public class FileProcessor implements Callable {
 
             }
             dataEntryRepository.saveAll(dataEntryList);
-
-            return count-1;
         } catch (Exception e) {
-            return -1;
+            System.err.println("failed to process file: " + this.uploadedFile.getFilename());
+        } finally{
+            if (reader != null) reader.close();
+            if (fileReader != null) fileReader.close();
         }
+
+        return count-1;
     }
 
     protected String removeDollarSign(String value) {
