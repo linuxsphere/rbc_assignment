@@ -3,5 +3,4 @@ steps:
     entrypoint: mvn
     args: ['package']
   - name: gcr.io/cloud-builders/docker
-    args: [ 'build', '-t', 'gcr.io/dataset-rbc/dataset', '--build-arg=JAR_FILE=target/dataset-1.0-SNAPSHOT.jar', '.' ]
-    images: [ 'gcr.io/dataset-rbc/dataset' ]
+    args: [ 'build', '-t', 'gcr.io/dataset-rbc/dataset-rb', '--build-arg=JAR_FILE=target/dataset-1.0-SNAPSHOT.jar', '.' ]
