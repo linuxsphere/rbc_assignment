@@ -1,6 +1,6 @@
 steps:
   - name: maven:3-jdk-8
     entrypoint: mvn
-    args: ['package']
+    args: ['clean','package']
   - name: gcr.io/cloud-builders/docker
     args: [ 'build', '-t', 'gcr.io/dataset-rbc/dataset-rb', '--build-arg=JAR_FILE=target/dataset-1.0-SNAPSHOT.jar', '.' ]
