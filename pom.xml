@@ -137,7 +137,7 @@
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
-                            <mainClass>com.xinglie.dataset.DownJonesDatasetApp</mainClass>
+                            <mainClass>com.xinglie.dataset.DowJonesDatasetApp</mainClass>
                         </configuration>
                     </execution>
                 </executions>
