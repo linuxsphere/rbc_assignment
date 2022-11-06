@@ -5,6 +5,7 @@ COPY ./target/dataset-1.0-SNAPSHOT.jar ./app.jar
 
 EXPOSE 8080
 COPY docker-entrypoint.sh .
+RUN mkdir -p /data/dowJones/files
 RUN chown nobody ./docker-entrypoint.sh && chmod u+x ./docker-entrypoint.sh
 RUN useradd -ms /bin/bash datasetappuser
 USER datasetappuser

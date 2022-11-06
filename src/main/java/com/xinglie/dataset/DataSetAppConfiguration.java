@@ -18,12 +18,12 @@ import java.io.File;
 @EnableTransactionManagement
 public class DataSetAppConfiguration {
 
-    final String appFolder = "C:\\dowJones";
+    final String appFolder = "/data/dowJones";
     final String h2DB = "h2" ;
 
     @Bean(name="uploadedFilesFolder")
     public File getUploadedFileFolder(){
-        String fileFolder = appFolder +  "\\files";
+        String fileFolder = appFolder +  "/files";
 
         File file = new File(fileFolder);
         return file;
