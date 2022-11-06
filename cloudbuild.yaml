@@ -3,6 +3,6 @@ steps:
     entrypoint: mvn
     args: ['clean','package']
   - name: gcr.io/cloud-builders/docker
-    args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/dataset-rbc/dataset-rbc-image:v1', '--build-arg=JAR_FILE=target/dataset-1.0-SNAPSHOT.jar', '.' ]
+    args: [ 'build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/steve-docker-repo/dataset-rbc-image:v1', '--build-arg=JAR_FILE=target/dataset-1.0-SNAPSHOT.jar', '.' ]
 images:
-  - 'us-central1-docker.pkg.dev/$PROJECT_ID/dataset-rbc/dataset-rbc-image:v1'
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/steve-docker-repo/dataset-rbc-image:v1'
